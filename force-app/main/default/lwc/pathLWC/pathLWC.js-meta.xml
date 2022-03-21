@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Path LWC</masterLabel>
+    <description>Custom path component built with LWC.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property
+                name="objectAPIName"
+                label="Object API Name" 
+                type="String"
+                description="Use '__c' if it's a custom object and the namespace if it's managed."/>
+            <property
+                name="fieldAPIName"
+                label="Field API Name"
+                type="String"
+                description="See object API description."/>
+            <property
+                name="internalOrComm"
+                label="Community or internal"
+                type="String"
+                datasource="Community,Internal"
+                default="Community"
+                required="true"/>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="recordId" type="String" 
+                label="Record ID"
+                description="Should be set to {!recordId}"/>
+                <property
+                name="objectAPIName"
+                label="Object API Name" 
+                type="String"
+                description="Use '__c' if it's a custom object and the namespace if it's managed."/>
+            <property
+                name="fieldAPIName"
+                label="Field API Name"
+                type="String"
+                description="See object API description."/>
+            <property
+                name="internalOrComm"
+                label="Community or internal"
+                type="String"
+                datasource="Community,Internal"
+                default="Community"
+                required="true"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

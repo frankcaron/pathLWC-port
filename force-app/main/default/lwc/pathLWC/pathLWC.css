@@ -1,0 +1,12 @@
+.linkOverride{
+    cursor: default;
+}
+
+.container{
+    background-color: #F7F8F8;
+    padding-top: 0.5rem;
+}
+
+.pathContainer{
+    padding-bottom: 0.5rem;    
+}

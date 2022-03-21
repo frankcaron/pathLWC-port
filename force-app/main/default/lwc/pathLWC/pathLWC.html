@@ -1,0 +1,53 @@
+<template>
+    <c-get-record
+        object-a-p-i-name="ResidentialLoanApplication"
+        field-a-p-i-names={fieldAPIName}
+        onrecordobjectevent={recordObjectEventHandler}
+        record-id={recordId}>
+    </c-get-record>
+    <div if:true={showPath}>
+        <lightning-card title="" if:true={isInternal}>
+            <div class="slds-path slds-p-horizontal_small pathContainer">
+                <div class="slds-grid slds-path__track">
+                    <div class="slds-grid slds-path__scroller-container">
+                        <div class="slds-path__scroller">
+                            <div class="slds-path__scroller_inner">
+                                <ul class="slds-path__nav" role="listbox" aria-orientation="horizontal">
+                                    <template for:each={picklistValuesWithCSS} for:item="picklistValue">
+                                        <li class={picklistValue.pathClasses} role="presentation" key={picklistValue.label}>
+                                            <span class="slds-path__link linkOverride">
+                                                <span class="slds-path__title">{picklistValue.label}</span>
+                                            </span>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+
+    <div if:true={showPath}>
+        <div class="slds-path slds-p-horizontal_small container" if:true={isCommunity}>
+            <div class="slds-grid slds-path__track">
+                <div class="slds-grid slds-path__scroller-container">
+                    <div class="slds-path__scroller">
+                        <div class="slds-path__scroller_inner">
+                            <ul class="slds-path__nav" role="listbox" aria-orientation="horizontal">
+                                <template for:each={picklistValuesWithCSS} for:item="picklistValue">
+                                    <li class={picklistValue.pathClasses} role="presentation" key={picklistValue.label}>
+                                        <span class="slds-path__link linkOverride">
+                                            <span class="slds-path__title">{picklistValue.label}</span>
+                                        </span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
