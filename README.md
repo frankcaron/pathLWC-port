@@ -1,6 +1,6 @@
 # Path LWC
 
-This is a custom Lightning Web Component for use with Salesforce Financial Services Cloud that adds path support to the RLA object.
+This is a custom Lightning Web Component for use with Salesforce Financial Services Cloud that adds path support to the Residential Loan Application object (or any other object that doesn't support the Path natively).
 
 ## Deploy
 
